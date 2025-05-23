@@ -7,8 +7,8 @@ bl_info = {
 	'location': 'File -> Import/Export',
 	'description': 'Tools to work with M2I format',
 	'warning': '',
-	'wiki_url': 'https://forums.darknestfantasy.com/index.php?threads/m2mod-9-x-x-for-sl.36223/',
-	'tracker_url': 'https://forums.darknestfantasy.com/index.php?threads/m2mod-9-x-x-for-sl.36223/',
+	'wiki_url': 'https://example.com/',
+	'tracker_url': '',
 	'support': 'COMMUNITY',
 	'category': 'Import-Export'
 }
