@@ -7,8 +7,8 @@ bl_info = {
 	'location': 'File -> Import/Export',
 	'description': 'Tools to work with M2I format',
 	'warning': '',
-	'wiki_url': 'https://forums.darknestfantasyerotica.com/index.php?threads/m2mod-4-8-13-for-legion.36223/',
-	'tracker_url': 'https://forums.darknestfantasyerotica.com/index.php?threads/m2mod-4-8-13-for-legion.36223/',
+	'wiki_url': 'https://example.com/',
+	'tracker_url': 'https://example.com/',
 	'support': 'COMMUNITY',
 	'category': 'Import-Export'}
 
