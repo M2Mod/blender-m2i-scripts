@@ -149,24 +149,36 @@ class CCamera:
 		self.Position = [0.0, 0.0, 0.0]
 		self.Target = [0.0, 0.0, 0.0]
 
+RENDER_FLAG_ITEMS = [
+				('0', 'None', '', '', 0),
+				('1', 'Unlit', '', 'None', 0x1),
+				('2', 'Unfogged', '', 'None', 0x2),
+				('3', 'TwoSided', '', 'None', 0x4),
+				('4', 'BillBoard', '', 'None', 0x8),
+				('5', 'NoZBuffer', '', 'None', 0x10),
+				('6', 'Unk6', '', 'None', 0x40),
+				('7', 'Unk7', '', 'None', 0x80),
+				('8', 'Unk8', '', 'None', 0x400),
+				('9', 'Unk9', '', 'None', 0x800)
+				]
+
 def RenderFlagsToSet(Flags):
 	s = set()
 
-	renderFlagItems = bpy.types.Mesh.bl_rna.properties['wow_props'].fixed_type.RenderFlags[1]['items']
-	for renderFlagTuple in renderFlagItems:
-		if (Flags & renderFlagTuple[4]) != 0:
-			s.add(renderFlagTuple[0])
+	for item in RENDER_FLAG_ITEMS:
+		identifier, _, _, _, flag_value = item
+		if (Flags & flag_value) != 0:
+			s.add(identifier)
 
 	return s
 
 def RenderFlagsFromSet(Set):
 	value = 0
 
-	renderFlagItems = bpy.types.Mesh.bl_rna.properties['wow_props'].fixed_type.RenderFlags[1]['items']
-	for renderFlagTuple in renderFlagItems:
-		if renderFlagTuple[0] in Set:
-			value |= renderFlagTuple[4]
-
+	for item in RENDER_FLAG_ITEMS:
+		identifier, _, _, _, flag_value = item
+		if identifier in Set:
+				value |= flag_value
 	return value
 
 opCountByShader = {

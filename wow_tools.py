@@ -408,18 +408,7 @@ class Wow_Mesh_Props(bpy.types.PropertyGroup):
 		Wow_Mesh_Props.RenderFlags = bpy.props.EnumProperty(
 			name='Render flags',
 			description='Render flags',
-			items=[
-				('0', 'None', '', '', 0),
-				('1', 'Unlit', '', 'None', 0x1),
-				('2', 'Unfogged', '', 'None', 0x2),
-				('3', 'TwoSided', '', 'None', 0x4),
-				('4', 'BillBoard', '', 'None', 0x8),
-				('5', 'NoZBuffer', '', 'None', 0x10),
-				('6', 'Unk6', '', 'None', 0x40),
-				('7', 'Unk7', '', 'None', 0x80),
-				('8', 'Unk8', '', 'None', 0x400),
-				('9', 'Unk9', '', 'None', 0x800)
-				],
+			items=RENDER_FLAG_ITEMS,
 			default={'3'},
 			options={'ENUM_FLAG'}
 			)
@@ -696,7 +685,7 @@ class DATA_PT_wowproperties_mesh_props(bpy.types.Panel):
 					else:
 						textureCount = opCountByShader[int(props.ShaderId)]
 						if textureCount > 1:
-							boxShader.label("Select shader textures (%d):" % (textureCount - 1))
+							boxShader.label(text="Select shader textures (%d):" % (textureCount - 1))
 						for i in range(1, textureCount):
 							box = boxShader.box()
 							box.prop(props, 'TextureType' + str(i), text='Texture %d' % i)

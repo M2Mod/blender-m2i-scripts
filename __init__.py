@@ -13,6 +13,7 @@ bl_info = {
 	'category': 'Import-Export'
 }
 
+from .wow_common import *
 from .io_export_wow_m2i import *
 from .io_import_wow_m2i import *
 from .wow_tools import *
@@ -109,5 +110,3 @@ def unregister():
 	bpy.types.TOPBAR_MT_file_import.remove(menu_func_import)
 	bpy.types.TOPBAR_MT_file_export.remove(menu_func_export)
 
-if __name__ == '__main__':
-	register()

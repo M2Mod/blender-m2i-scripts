@@ -141,7 +141,7 @@ class DATA_PT_wowtools_vertex_props(bpy.types.Panel):
 		oWM = context.window_manager
 
 		box = layout.box()
-		split = box.split(percentage=0.4)
+		split = box.split(factor=0.4)
 		col = split.column()
 		col.label(text="Weight Threshold:")
 		col = split.column()

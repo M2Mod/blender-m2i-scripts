@@ -285,7 +285,6 @@ def DoImport(FileName):
 		createTextureLayers(mesh, 'Texture2', texFaces2)
 
 		for i, Vertex in enumerate(Mesh.VertexList):
-			BVertex = profile_object.data.vertices[i]
 			for j in range(0, 4):
 				if Vertex.BoneWeights[j] > 0:
 					key = 'Bone' + str('%03d' % Vertex.BoneIndices[j])
